@@ -1,22 +1,33 @@
 pipeline {
     agent {
         docker {
-            //image 'docker:20.10.7-git' // Git and Docker pre-installed
-            image 'ubuntu:20.04'
-            //args '-v /var/run/docker.sock:/var/run/docker.sock'
+            image 'ubuntu:latest'  // Use the latest Ubuntu image
+            args '-u root'         // Run as root
         }
     }
     stages {
-        stage('Install Java') {
+        stage('Clone Repository') {
             steps {
                 script {
-                    // Switch to root user to install packages
-                    sh 'apt update'
-                    sh 'apt install openjdk-17-jre'
+                    // Install Git
+                    sh 'apt-get update && apt-get install -y git'
+                    // Clone the repository (replace <repo_url> with your repository URL)
+                    sh 'git clone https://github.com/siddarthborigam/Jenkins-Zero-To-Hero.git'
                
                 }
             }
         }
-        
+
+        stage('install Java') {
+            steps {
+                script {
+                    // Install Java
+                    sh 'apt-get install -y openjdk-17-jre'
+                    sh 'cd multi-stage-multi-agent'
+                    sh 'java hello_world.java'
+                    
+                }
+            }
+        }
     }
 }
