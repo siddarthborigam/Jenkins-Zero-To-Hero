@@ -1,8 +1,9 @@
 pipeline {
     agent {
         docker {
-            image 'docker:20.10.7-git' // Git and Docker pre-installed
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
+            //image 'docker:20.10.7-git' // Git and Docker pre-installed
+            image 'ubuntu:20.04'
+            //args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
     stages {
@@ -10,10 +11,9 @@ pipeline {
             steps {
                 script {
                     // Switch to root user to install packages
-                    sh 'apk add --no-cache openjdk11'
-                    
-                    // Install OpenJDK in the container using apk (Alpine Linux package manager)
-                    sh 'apk update && apk add openjdk11'
+                    sh 'sudo apt update'
+                    sh 'sudo apt install openjdk-17-jre'
+               
                 }
             }
         }
