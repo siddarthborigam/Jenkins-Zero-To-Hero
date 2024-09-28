@@ -3,8 +3,11 @@ pipeline {
     agent {
         docker {
             // Use a Java Docker image, e.g., OpenJDK
-            image 'openjdk:11-jdk-slim'
-            args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: Mount Docker socket if needed
+            //image 'openjdk:11-jdk-slim'
+            //args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: Mount Docker socket if needed
+
+            image 'docker:20.10.7-git' // Official Docker image with Git pre-installed
+            args '-v /var/run/docker.sock:/var/run/docker.sock' // Bind the Docker socket to interact with the host's Docker
         }
     }
     stages {
