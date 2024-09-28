@@ -9,6 +9,9 @@ pipeline {
         stage('Install Java') {
             steps {
                 script {
+                    // Switch to root user to install packages
+                    sh 'apk add --no-cache openjdk11'
+                    
                     // Install OpenJDK in the container using apk (Alpine Linux package manager)
                     sh 'apk update && apk add openjdk11'
                 }
