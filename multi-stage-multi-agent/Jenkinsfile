@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Install Git
-                    sh 'apt-get update && apt-get install -y git'
+                    sh 'apt-get update && apt-get install -y git && apt-get install pip'
                     // Clone the repository (replace <repo_url> with your repository URL)
                     //sh 'git clone https://github.com/siddarthborigam/Jenkins-Zero-To-Hero.git'
                
@@ -23,7 +23,7 @@ pipeline {
                 script {
                     // Install Java
                     //sh 'apt-get install -y python'
-                    sh 'python -version'
+                    sh 'pip install python'
                     sh 'ls'
                     //sh 'cd multi-stage-multi-agent'
                     //sh 'java hello_world.java'
