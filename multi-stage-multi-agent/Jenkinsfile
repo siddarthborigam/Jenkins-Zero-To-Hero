@@ -10,13 +10,22 @@ pipeline {
             args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: Mount Docker socket if needed
         }
       }
-      steps {
-        // Compile the Java code
-        sh 'java HelloWorld.java'
-        
-
-
-      }
+    stage('Build Java App') {
+        steps {
+                script {
+                    // Compile the Java application
+                    sh 'javac HelloWorld.java'
+                }
+            }
+        }
+      stage('Run Java App') {
+            steps {
+                script {
+                    // Run the Java application
+                    sh 'java HelloWorld'
+                }
+            }
+        }
     }
     stage('Front-end') {
       agent {
