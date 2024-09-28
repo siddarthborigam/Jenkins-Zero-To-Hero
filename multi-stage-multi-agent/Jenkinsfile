@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Install Java
-                    sh 'apt-get install -y python'
+                    //sh 'apt-get install -y python'
                     sh 'python -version'
                     sh 'ls'
                     //sh 'cd multi-stage-multi-agent'
