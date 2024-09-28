@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Compile the Java application
-                    sh 'cd multi-stage-multi-agent'
+                    sh 'cd Jenkins-Zero-To-Hero/multi-stage-multi-agent'
                     sh 'javac hello_world.java'
                 }
             }
