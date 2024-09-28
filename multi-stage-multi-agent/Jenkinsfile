@@ -12,7 +12,7 @@ pipeline {
       }
       steps {
         // Compile the Java code
-        sh 'javac HelloWorld.java'
+        sh 'java HelloWorld.java'
         
 
 
