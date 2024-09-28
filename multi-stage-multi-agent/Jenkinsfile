@@ -11,13 +11,15 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository (assumes you are using Git or similar)
-                checkout scm 
+                //checkout scm
+                sh 'git clone https://github.com/siddarthborigam/Jenkins-Zero-To-Hero.git'
             }
         }
         stage('Build Java App') {
             steps {
                 script {
                     // Compile the Java application
+                    sh 'cd multi-stage-multi-agent'
                     sh 'javac hello_world.java'
                 }
             }
