@@ -26,10 +26,9 @@ pipeline {
                     sh 'apt install -y python3-pip'
                     sh 'python3 --version'
                     sh 'ls'
-                    //sh 'cd multi-stage-multi-agent'
-                    //sh 'java hello_world.java'
-                    //sh 'javac hello_world.java'
-                    //sh 'java hello_world'
+                    sh 'touch test.py'
+                    sh ' echo "print("siddarth")" > test.py'
+                    sh 'python3 test.py'
                     
                     
                 }
