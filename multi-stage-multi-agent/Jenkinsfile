@@ -14,24 +14,6 @@ pipeline {
                 }
             }
         }
-        stage('Checkout') {
-            steps {
-                sh 'git clone https://github.com/siddarthborigam/Jenkins-Zero-To-Hero.git'
-            }
-        }
-        stage('Build Java App') {
-            steps {
-                script {
-                    sh 'cd Jenkins-Zero-To-Hero/multi-stage-multi-agent && javac hello_world.java'
-                }
-            }
-        }
-        stage('Run Java App') {
-            steps {
-                script {
-                    sh 'cd Jenkins-Zero-To-Hero/multi-stage-multi-agent && java hello_world'
-                }
-            }
-        }
+        
     }
 }
