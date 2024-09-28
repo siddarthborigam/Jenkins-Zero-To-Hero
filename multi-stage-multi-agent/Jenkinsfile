@@ -24,7 +24,10 @@ pipeline {
                     // Install Java
                     sh 'apt-get install -y openjdk-17-jre'
                     sh 'cd multi-stage-multi-agent'
-                    sh 'java hello_world.java'
+                    //sh 'java hello_world.java'
+                    sh 'javac hello_world.java'
+                    sh 'java hello_world'
+                    
                     
                 }
             }
