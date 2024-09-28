@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Install OpenJDK in the container using apk (Alpine Linux package manager)
-                    sh 'apk update && apk add openjdk11'
+                    sh 'sudo apk update && sudo apk add openjdk11'
                 }
             }
         }
