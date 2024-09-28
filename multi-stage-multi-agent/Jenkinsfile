@@ -14,7 +14,7 @@ pipeline {
         steps {
                 script {
                     // Compile the Java application
-                    sh 'javac HelloWorld.java'
+                    sh 'javac hello_world.java'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Run the Java application
-                    sh 'java HelloWorld'
+                    sh 'java hello_world'
                 }
             }
         }
