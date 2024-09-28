@@ -7,6 +7,10 @@ pipeline {
       }
       steps {
         sh 'mvn --version'
+
+        // Compile the Java code
+        sh 'javac HelloWorld.java'
+
       }
     }
     stage('Front-end') {
