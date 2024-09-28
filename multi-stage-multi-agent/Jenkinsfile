@@ -8,7 +8,12 @@ pipeline {
         }
     }
     stages {
-        
+        stage('Checkout') {
+            steps {
+                // Checkout the repository (assumes you are using Git or similar)
+                checkout scm 
+            }
+        }
         stage('Build Java App') {
             steps {
                 script {
@@ -27,4 +32,3 @@ pipeline {
         }
     }
 }
-
