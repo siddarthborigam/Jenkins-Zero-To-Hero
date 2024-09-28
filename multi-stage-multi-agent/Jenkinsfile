@@ -23,7 +23,8 @@ pipeline {
                 script {
                     // Install Java
                     //sh 'apt-get install -y python'
-                    sh 'pip install -y python'
+                    sh 'apt install -y python3-pip'
+                    sh 'python3 --version'
                     sh 'ls'
                     //sh 'cd multi-stage-multi-agent'
                     //sh 'java hello_world.java'
