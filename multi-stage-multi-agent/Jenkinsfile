@@ -12,7 +12,7 @@ pipeline {
                     // Install Git
                     sh 'apt-get update && apt-get install -y git'
                     // Clone the repository (replace <repo_url> with your repository URL)
-                    sh 'git clone https://github.com/siddarthborigam/Jenkins-Zero-To-Hero.git'
+                    //sh 'git clone https://github.com/siddarthborigam/Jenkins-Zero-To-Hero.git'
                
                 }
             }
