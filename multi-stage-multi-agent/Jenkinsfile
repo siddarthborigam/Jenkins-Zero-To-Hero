@@ -1,41 +1,30 @@
+
 pipeline {
-  agent none
-  stages {
-    stage('Back-end') {
-      agent {
-        
+    agent {
         docker {
             // Use a Java Docker image, e.g., OpenJDK
             image 'openjdk:11-jdk-slim'
             args '-v /var/run/docker.sock:/var/run/docker.sock' // Optional: Mount Docker socket if needed
         }
-      }
-    
-      steps {
-        script {
-          // Compile the Java application
-          sh 'javac hello_world.java'
+    }
+    stages {
+        
+        stage('Build Java App') {
+            steps {
+                script {
+                    // Compile the Java application
+                    sh 'javac hello_world.java'
+                }
+            }
         }
-      }
-
-      steps {
-        script {
-          // Run the Java application
+        stage('Run Java App') {
+            steps {
+                script {
+                    // Run the Java application
                     sh 'java hello_world'
+                }
+            }
         }
-      }
-        
-        
     }
-    stage('Front-end') {
-      agent {
-        docker { image 'node:16-alpine' }
-      }
-      steps {
-        sh 'node --version'
-
-        
-      }
-    }
-  }
 }
+
