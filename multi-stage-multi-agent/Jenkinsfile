@@ -11,8 +11,8 @@ pipeline {
             steps {
                 script {
                     // Switch to root user to install packages
-                    sh 'sudo apt update'
-                    sh 'sudo apt install openjdk-17-jre'
+                    sh 'apt update'
+                    sh 'apt install openjdk-17-jre'
                
                 }
             }
