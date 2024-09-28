@@ -27,7 +27,7 @@ pipeline {
                     sh 'python3 --version'
                     sh 'ls'
                     sh 'touch test.py'
-                    sh ' echo "print('siddarth')" > test.py'
+                    sh 'echo "print(3+5)" > test.py'
                     sh 'python3 test.py'
                     
                     
